@@ -41,11 +41,14 @@ def generate_image(request):
     except SpotifyOauthError:
         return redirect('/')
 
-    return redirect('/')
-
 def get_image(request):
 
-    collage = Image.open(BytesIO(base64.b64decode(request.session['img_str'])))
+    
+
+    try:
+        collage = Image.open(BytesIO(base64.b64decode(request.session['img_str'])))
+    except KeyError:
+        collage = open("/spotcollage/static/img/download.png", "rb").read()
 
     response = HttpResponse(content_type="image/png")
     collage.save(response, "PNG")

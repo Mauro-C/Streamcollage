@@ -9,7 +9,7 @@
     <meta name="description" content="Generate a collage of your top Spotify albums">
     <meta name="keywords" content="Spotify, Collage, Generator, Album, Music">
 
-    <title>Streamcollage - Beta- Spotify Collage Generator</title>
+    <title>Streamcollage - Spotify Collage Generator</title>
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> {% load static %}
@@ -57,10 +57,8 @@
           margin-bottom: 0px
         }
 
-        div.center iframe {
-          display: block;
-          margin-left: auto;
-          margin-right: auto;
+        #ad {
+
         }
 
 
@@ -85,7 +83,7 @@
         <div class="container">
             <div class="nav-left">
                 <a class="nav-item is-brand" href="#">
-                    <h1 id="main-logo" class="title"><span id="logo-blue">Stream</span>collage - Beta</h1>
+                    <h1 id="main-logo" class="title"><span id="logo-blue">Stream</span>collage</h1>
                     <p>Generate a collage of your top Spotify albums</p>
                 </a>
 
@@ -175,7 +173,7 @@
 
             <!-- Downloads Tile -->
 
-            <div class="tile is-2 is-vertical is-parent">
+            <div class="tile is-2 is-vertical is-parent" id="ad">
               <!--
                 <div class="tile is-child box">
 
@@ -187,8 +185,7 @@
 
                 </div> -->
 
-                <div class="ad tile is-child box">
-
+                <div class="tile is-child box">
                   <div class="alignleft">
                    <script type="text/javascript">
                      	amzn_assoc_ad_type = "banner";
