@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Streamcollage</title>
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.2.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"> {% load static %}
+
+    <style>
+        #logo-blue {
+            color: orange;
+        }
+
+        .nav {
+            margin-bottom: 10px;
+            background-color: #191414;
+        }
+
+        .nav .title {
+            color: white;
+        }
+
+        .nav .nav-item {
+            color: white;
+        }
+
+        .fa-twitter {
+          color: #1da1f2;
+        }
+
+        img {
+          background: url({% static "img/loading.gif" %}) no-repeat;
+          background-position: center;
+          background-size: 100px 100px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="nav has-shadow">
+        <div class="container">
+            <div class="nav-left">
+                <a class="nav-item is-brand" href="#">
+                    <h1 class="title"><span id="logo-blue">Stream</span>collage</h1>
+                </a>
+            </div>
+
+            <div class="nav-right nav-menu">
+                <a class="nav-item" href="#">Generator</a>
+                <a class="nav-item" href="#">About</a>
+
+                <span class="nav-item">
+            <a class="button" >
+              <span class="icon">
+                <i class="fa fa-twitter"></i>
+              </span>
+                <span>Tweet</span>
+                </a>
+                <a class="button" href="#">
+                    <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+                    <span>Github</span>
+                </a>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+
+      <!-- Start Tiles -->
+        <div class="tile is-ancestor">
+            <div class="tile is-3 is-vertical is-parent">
+
+              <!-- Settings Tile -->
+                <div class="tile is-child box">
+                    <p class="title">Settings</p>
+
+                    <form action="" method="post">
+                        {% csrf_token %}
+                        <label class="label">Grid Size</label>
+                        <p class="control">
+                            <span class="select">{{ form.grid_size }}</span>
+                        </p>
+
+
+                        <label class="label">Time Range</label>
+                        <p class="control">
+                            <span class="select">{{ form.time_range }}</span>
+                        </p>
+
+                </div>
+
+                <!-- Generate Tile -->
+                <div class="tile is-child box">
+                    <p class="title">Generate</p>
+                    <p class="control">
+                        <button class="button is-primary" type="submit">
+                          Generate Using Spotify
+                        </button>
+                    </p>
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- Result Tile -->
+            <div class="tile is-parent">
+                <div class="tile is-child box">
+
+                  <!--
+                  <div class="notification is-info">
+                    Generate a collage using your Spotify account using the settings on the left
+                </div>
+              -->
+
+                  <p class="title">Result</p>
+                  <figure class="image is-square">
+                        <img src="/get_image" alt="Collage" style="background-color: grey" id="collage">
+                  </figure>
+                </div>
+
+            </div>
+
+            <!-- Downloads Tile -->
+
+            <div class="tile is-3 is-vertical is-parent">
+                <div class="tile is-child box">
+
+                    <p class="title">Download</p>
+                    <form method="get" action="/get_image">
+                    <a class="button" type="submit">
+                      </form>
+                        <span class="icon">
+                      <i class="fa fa-download"></i>
+                    </span>
+                        <span>Download Collage</span>
+                    </a>
+
+                </div>
+
+                <div class="tile is-child box">
+                    <img src="{% static "img/ad.jpg" %}" alt="Collage Preview">
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
