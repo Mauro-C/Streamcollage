@@ -21,7 +21,6 @@ def index(request):
 
     return render(request, 'generator/index.html', {'form': ParamForm()})
 
-
 def generate_image(request):
     form = TokenForm(request.GET)
 
