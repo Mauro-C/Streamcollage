@@ -120,13 +120,13 @@
                         {% csrf_token %}
                         <label class="label">Grid Size</label>
                         <p class="control">
-                            <span class="select">{{ form.grid_size }}</span>
+                            <span class="select is-medium">{{ form.grid_size }}</span>
                         </p>
 
 
                         <label class="label">Time Range</label>
                         <p class="control">
-                            <span class="select">{{ form.time_range }}</span>
+                            <span class="select is-medium">{{ form.time_range }}</span>
                         </p>
 
                 </div>
@@ -135,7 +135,7 @@
                 <div class="tile is-child box">
                     <p class="title">Generate</p>
                     <p class="control">
-                        <button class="button is-primary" type="submit">
+                        <button class="button is-success is-medium" type="submit">
                           Generate Using Spotify
                         </button>
                     </p>
@@ -171,7 +171,7 @@
                     <p class="title">Download</p>
 
                     <form method="get" action="/get_image">
-                      <button class="button" type="submit">Download!</button>
+                      <button class="button is-medium" type="submit">Download Collage</button>
                     </form>
 
                 </div>
