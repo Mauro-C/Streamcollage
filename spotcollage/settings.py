@@ -14,12 +14,12 @@ import dj_database_url
 import environ
 
 # Enviromental Variable Configuration
-env = environ.Env(DEBUG=(bool, False),) # set default values and casting
-environ.Env.read_env() # reading .env file
+#env = environ.Env(DEBUG=(bool, False),) # set default values and casting
+#environ.Env.read_env() # reading .env file
 
-SPOTIFY_CLIENT_ID = env('SPOTIFY_CLIENT_ID')
-SPOTIFY_CLIENT_SECRET = env('SPOTIFY_CLIENT_SECRET')
-SPOTIFY_REDIRECT_URI = env('SPOTIFY_REDIRECT_URI')
+SPOTIFY_CLIENT_ID = os.environ.get('SPOTIFY_CLIENT_ID')
+SPOTIFY_CLIENT_SECRET = os.environ.get('SPOTIFY_CLIENT_SECRET')
+SPOTIFY_REDIRECT_URI = os.environ.get('SPOTIFY_REDIRECT_URI')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
