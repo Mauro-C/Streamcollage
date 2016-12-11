@@ -48,7 +48,7 @@ def get_image(request):
     try:
         collage = Image.open(BytesIO(base64.b64decode(request.session['img_str'])))
     except KeyError:
-        collage = open("/spotcollage/static/img/download.png", "rb").read()
+        collage = Image.new('RGB', (300, 300))
 
     response = HttpResponse(content_type="image/png")
     collage.save(response, "PNG")
