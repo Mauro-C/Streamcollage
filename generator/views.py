@@ -41,9 +41,9 @@ def generate_image(request):
     except SpotifyOauthError:
         return redirect('/')
 
-def get_image(request):
+    return redirect('/')
 
-    
+def get_image(request):
 
     try:
         collage = Image.open(BytesIO(base64.b64decode(request.session['img_str'])))
