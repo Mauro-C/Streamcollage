@@ -1,7 +1,7 @@
 # Streamcollage
 Spotcollage is web application that enables you to generate a 3x3, 4x4, or 5x5 collage of your top played Spotify albums within a specified time range.
 
-# Try Out Spotcollage
+# Try Out Streamcollage
 The web application is hosted here:
 http://spotcollage.herokuapp.com
 
